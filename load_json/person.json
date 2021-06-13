@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Pranav Masekar",
+        "age" : "18",
+        "gender": "Male",
+        "hairColor":"Black"
+    },
+    {
+        "name" : "Dron",
+        "age" : "19",
+        "gender": "Male",
+        "hairColor":"Brown"
+    },
+    {
+        "name" : "Ajinkya",
+        "age" : "17",
+        "gender": "Male",
+        "hairColor":"Blue"
+    },
+    {
+        "name" : "Robert",
+        "age" : "26",
+        "gender": "Male",
+        "hairColor":"Red"
+    },
+    {
+        "name" : "gg",
+        "age" : "15",
+        "gender": "Female",
+        "hairColor":"Black"
+    }
+]
