@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
+
+import 'ChatApp/HomePageChat.dart';
+//import 'HomePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,11 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Calculator App",
+      title: "Chat App",
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: HomePageChat(),
     );
   }
 }
