@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ChatMessage extends StatelessWidget {
-  String _name = "Pranav";
+class ChatMessage extends StatefulWidget {
   final String text;
 
   ChatMessage({Key? key, required this.text}) : super(key: key);
+
+  @override
+  _ChatMessageState createState() => _ChatMessageState();
+}
+
+class _ChatMessageState extends State<ChatMessage> {
+  String _name = "Pranav";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +34,7 @@ class ChatMessage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 5.0),
-                child: Text(text),
+                child: Text(widget.text),
               )
             ],
           )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Json_App/HomePage.dart';
+
+import 'Tik Tac Too Game/Homepage.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Json App",
+      title: "Cryptocurrency App",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: HomePageJsonApp(),
+      home: HomePageGame(),
     );
   }
 }
