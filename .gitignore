@@ -44,3 +44,17 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# dependecies
+/.dart_tool
+/.idea
+/.vscode
+/android
+/build
+/ios
+/test
+/Web
+/.metadata
+/.packages
+/many_apps.iml
+/pubspec.lock
+
