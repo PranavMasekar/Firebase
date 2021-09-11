@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'ChatScreen.dart';
-
-class HomePageChat extends StatelessWidget {
+class HomeFire extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("OP Chat "),
+        title: Text("Firebase Authentication"),
       ),
-      body: ChatScreen(),
+      body: Center(
+        child: Text("Home page"),
+      ),
     );
   }
 }

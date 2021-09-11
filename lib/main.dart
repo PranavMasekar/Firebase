@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Tik Tac Too Game/Homepage.dart';
+import 'Firebase/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Cryptocurrency App",
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.purple,
       ),
-      home: HomePageGame(),
+      home: HomeFire(),
     );
   }
 }
