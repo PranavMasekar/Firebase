@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:many_apps/services/auth.dart';
@@ -11,6 +13,22 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  Future<void> checkuserlog() async {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+    final user = await auth.currentUser;
+    if (user != null) {
+      name = user.displayName.toString();
+      email = user.email.toString();
+      imgurl = user.photoURL.toString();
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomeFire()));
+    }
+  }
+
+  void initState() {
+    checkuserlog();
+  }
+
   signInMethod() async {
     await signin();
     // constant.name = (await LocalData.getname())!;

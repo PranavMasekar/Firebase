@@ -40,9 +40,7 @@ Future<User?> signin() async {
     final User? currentuser = await _auth.currentUser;
     assert(currentuser!.uid == user!.uid);
     print(user);
-    name = user!.displayName.toString();
-    email = user.email.toString();
-    imgurl = user.photoURL.toString();
+
     // LocalData.savename(user!.displayName.toString());
     // LocalData.saveemail(user.email.toString());
     // LocalData.saveimg(user.photoURL.toString());
@@ -50,4 +48,10 @@ Future<User?> signin() async {
   } catch (e) {
     print(e);
   }
+}
+
+Future<String> signout() async {
+  await googleSignIn.signOut();
+  await _auth.signOut();
+  return "done";
 }
