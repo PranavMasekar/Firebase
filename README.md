@@ -1,4 +1,4 @@
-# many_apps
+# FIrebase
 
 A new Flutter project.
 
