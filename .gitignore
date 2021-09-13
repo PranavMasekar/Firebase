@@ -45,6 +45,7 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+git ignore
 # dependecies
 /.dart_tool
 /.idea
