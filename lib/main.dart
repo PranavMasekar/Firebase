@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:many_apps/Firebase/login.dart';
+// import 'package:many_apps/Firebase/login.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'File Upload/FileHome.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: Login(),
+      home: FileHome(),
     );
   }
 }
