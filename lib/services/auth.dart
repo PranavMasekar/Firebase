@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:many_apps/Firebase/localdb.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -29,21 +28,16 @@ Future<User?> signin() async {
     //After the user is been aurthenticated firebase creates users account
 
     //creating user class to return
-    final UserCredential = await _auth.signInWithCredential(credential);
-    final User? user = UserCredential.user;
+    final userCredential = await _auth.signInWithCredential(credential);
+    final User? user = await userCredential.user;
 
     //final checking that user is not anonymous
-    //assert(user!.isAnonymous);
-    assert(await user!.getIdToken() != null);
 
     //checking currentuser is same as user we created
     final User? currentuser = await _auth.currentUser;
     assert(currentuser!.uid == user!.uid);
     print(user);
 
-    // LocalData.savename(user!.displayName.toString());
-    // LocalData.saveemail(user.email.toString());
-    // LocalData.saveimg(user.photoURL.toString());
     return user;
   } catch (e) {
     print(e);
