@@ -7,34 +7,23 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 String name = "";
 String email = "";
 String imgurl = "";
-//Sign In function
+
 Future<User?> signin() async {
-  //signin option of different email acc
   try {
     final GoogleSignInAccount? googleSignInAccount =
         await googleSignIn.signIn();
 
-    //authentication of the email
     final GoogleSignInAuthentication googleSignInAuthentication =
         await googleSignInAccount!.authentication;
 
-    // creating credential for a user same as recipt that user is been verified
     final AuthCredential credential = GoogleAuthProvider.credential(
       idToken: googleSignInAuthentication.idToken,
       accessToken: googleSignInAuthentication.accessToken,
     );
 
-    //Google Authenticate the user and provide credential to put that particular user in the firabase database
-    //After the user is been aurthenticated firebase creates users account
-
-    //creating user class to return
     final userCredential = await _auth.signInWithCredential(credential);
-    final User? user = await userCredential.user;
-
-    //final checking that user is not anonymous
-
-    //checking currentuser is same as user we created
-    final User? currentuser = await _auth.currentUser;
+    final User? user = userCredential.user;
+    final User? currentuser = _auth.currentUser;
     assert(currentuser!.uid == user!.uid);
     print(user);
 
@@ -42,6 +31,7 @@ Future<User?> signin() async {
   } catch (e) {
     print(e);
   }
+  return null;
 }
 
 Future<String> signout() async {
